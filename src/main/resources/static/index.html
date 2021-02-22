@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Velib Test Splio</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/main.css" rel="stylesheet" />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <script src="/app.js"></script>
+  </head>
+  <body>
+    <noscript></noscript>
+    <div id="main-content" class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="connect">Velib Websocket Connect</label>
+              <button id="connect" class="btn btn-default" type="submit">
+                Connect
+              </button>
+              <button
+                id="disconnect"
+                class="btn btn-default"
+                type="submit"
+                disabled="disabled"
+              >
+                Disconnect
+              </button>
+            </div>
+          </form>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="form-row align-items-center">
+          <form id="myform">
+            <!-- <div class="col-auto">
+              <label for="dataset">Data set</label>
+              <input
+                type="text"
+                id="dataset"
+                class="form-control"
+                placeholder="Data set..."
+              />
+            </div> -->
+            <div class="col-auto">
+              <label for="dataset">Numero</label>
+              <input
+                type="text"
+                id="num"
+                class="form-control"
+                placeholder="Example: 27...."
+              />
+            </div>
+            <div class="col-auto">
+              <label for="dataset"
+                >Rue / Boulevard / Avenue (obligatoire)</label
+              >
+              <input
+                required
+                type="text"
+                id="q"
+                class="form-control"
+                placeholder="Example: Italiens, République, Magenta,...."
+              />
+            </div>
+            <div class="col-auto">
+              <label for="dataset">Code postale</label>
+              <input
+                type="text"
+                id="cp"
+                class="form-control"
+                placeholder="Example : 75002...."
+              />
+            </div>
+            <!-- <table>
+              <tr>
+                <td>
+                  <div class="col-auto">
+                    <label for="dataset">Lignes par page</label>
+                    <input
+                      type="text"
+                      id="row"
+                      class="form-control"
+                      placeholder=" (10 max)"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <div class="col-auto">
+                    <label for="dataset">Page </label>
+                    <input
+                      type="text"
+                      id="start"
+                      class="form-control"
+                      placeholder="start..."
+                    />
+                  </div>
+                </td>
+              </tr>
+            </table> -->
+
+            <br />
+            <button id="send" class="btn btn-default" type="submit">
+              Chercher
+            </button>
+          </form>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-12">
+          <table id="content" class="table table-striped">
+            <tbody id="elements"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
